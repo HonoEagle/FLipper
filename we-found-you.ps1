@@ -56,8 +56,7 @@ X      X     @%%;;@   |. ` ; ; ; ;  ,|   @%%;;@     X      X
 
 
 "
-$text | Out-File -FilePath "C:\info.txt" -Encoding UTF8
+$text | Out-File -FilePath "C:\Users\$env:username\Desktop\pawned.txt" -Encoding UTF8
 
 # Open the text file
-Start-Process -FilePath "notepad.exe" -ArgumentList "C:\info.txt"
-
+Start-Process -FilePath "notepad.exe" -ArgumentList "C:\Users\$env:username\Desktop\pawned.txt"
