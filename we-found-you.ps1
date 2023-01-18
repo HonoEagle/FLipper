@@ -59,4 +59,5 @@ X      X     @%%;;@   |. ` ; ; ; ;  ,|   @%%;;@     X      X
 $text | Out-File -FilePath "C:\info.txt" -Encoding UTF8
 
 # Open the text file
-Start-Process "notepad.exe" "C:\info.txt"
+Start-Process -FilePath "notepad.exe" -ArgumentList "C:\info.txt"
+
