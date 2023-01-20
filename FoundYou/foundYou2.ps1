@@ -52,9 +52,6 @@ X      X     @%%;;@   |. ` ; ; ; ;  ,|   @%%;;@     X      X
                            @%%;;@
                          @%%;;@..@@
                           @@@  @@@
-
-
-
 "
 $text | Out-File -FilePath "C:\Users\$env:username\Desktop\pawned.txt" -Encoding UTF8
 
