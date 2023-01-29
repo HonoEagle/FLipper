@@ -35,7 +35,7 @@ REM If firefox it will show the image "gnoumedd" and make it fullscreen
 REM If no firefox edit with brave, chrome, edge, ...
 REM -----
 
-STRING start brave https://github.com/HonoEagle/FLipper/blob/main/gnoumed/gnoumedd.png?raw=true
+STRING start brave https://cdn.discordapp.com/attachments/1065323649273446501/1069382101155205220/gnoumedd.png
 ENTER
 F11
 DELAY 2000
