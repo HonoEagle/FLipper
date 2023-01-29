@@ -12,15 +12,32 @@ REM #                                          On ne peut pas ouvrir la porte nu
 REM #                                                                                                                            #
 REM ##############################################################################################################################
 
+REM -----
+REM do the win+r and wait
+REM -----
 GUI r
 DELAY 200
+
+REM -----
+REM start a hidden powershell windows 
+REM -----
 STRING powershell -windowstyle hidden
 ENTER
 DELAY 200
-STRING start firefox https://github.com/HonoEagle/FLipper/blob/main/Gnnomed/gnoumedd.png?raw=true
+
+REM -----
+REM If firefox it will show the image "gnoumedd" and make it fullscreen
+REM If no firefox edit with brave, chrome, edge, ...
+REM -----
+
+STRING start firefox https://github.com/HonoEagle/FLipper/blob/main/gnoumed/gnoumedd.png?raw=true
 ENTER
 F11
 DELAY 2000
+
+REM -----
+REM start a hidden powershell windows and start gnoumed song
+REM -----
 GUI r
 DELAY 200
 STRING powershell -windowstyle hidden
