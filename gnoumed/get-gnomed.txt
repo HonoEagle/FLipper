@@ -35,7 +35,7 @@ REM If firefox it will show the image "gnoumedd" and make it fullscreen
 REM If no firefox edit with brave, chrome, edge, ...
 REM -----
 
-STRING start firefox https://github.com/HonoEagle/FLipper/blob/main/gnoumed/gnoumedd.png?raw=true
+STRING start brave https://github.com/HonoEagle/FLipper/blob/main/gnoumed/gnoumedd.png?raw=true
 ENTER
 F11
 DELAY 2000
@@ -48,7 +48,7 @@ DELAY 200
 STRING powershell -windowstyle hidden
 ENTER
 DELAY 200
-STRING start firefox https://www.youtube.com/watch?v=9iacZrrkGzk
+STRING start brave https://www.youtube.com/watch?v=9iacZrrkGzk
 ENTER
 DELAY 2000
 ENTER
