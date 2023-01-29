@@ -1,12 +1,22 @@
+REM ##############################################################################################################################
+REM #                                 |          _    _                   ______            _                                    #
+REM # Title     : Gnnomed             |    ____ | |  | |                 |  ____|          | |                                   #
+REM # Target    : Windows 10,11       |   / __ \| |__| | ___  _ __   ___ | |__   __ _  __ _| | ___                               #
+REM # Mode      : Hidden i think      |  / / _` |  __  |/ _ \| '_ \ / _ \|  __| / _` |/ _` | |/ _ \                              #
+REM #                                 | | | (_| | |  | | (_) | | | | (_) | |___| (_| | (_| | |  __/                              #
+REM # Category  : Prank               |  \ \__,_|_|  |_|\___/|_| |_|\___/|______\__,_|\__, |_|\___|                              #
+REM #                                 |   \____/                                       __/ |                                     #
+REM #                                 |                                               |___/                                      #
+REM #_________________________________|   Verrou par verrou et l'un apres l'autre, c'est la cle du bon hacker.                   #
+REM #                                          On ne peut pas ouvrir la porte numero 9 avant d'avoir debloque la numero 8.       #
+REM #                                                                                                                            #
+REM ##############################################################################################################################
 
 GUI r
 DELAY 200
 STRING powershell -windowstyle hidden
 ENTER
 DELAY 200
-STRING $key=[Math]::Ceiling(100/2);$obj=New-Object -ComObject WScript.Shell;for($i=0;$i -lt $key;$i++){$obj.SendKeys([char] 175)}
-ENTER
-DELAY 500
 STRING start firefox https://github.com/HonoEagle/FLipper/blob/main/Gnnomed/gnoumedd.png?raw=true
 ENTER
 F11
