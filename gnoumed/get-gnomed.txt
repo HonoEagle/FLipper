@@ -21,6 +21,7 @@ REM -----
 REM start a hidden powershell windows and start gnoumed song
 REM -----
 GUI r
+DELAY 2000
 STRING powershell -windowstyle hidden
 ENTER
 DELAY 2000
@@ -36,7 +37,7 @@ DELAY 2000
 REM -----
 REM start a hidden powershell windows 
 REM -----
-STRING powershell
+STRING powershell -windowstyle hidden
 ENTER
 DELAY 2000
 
