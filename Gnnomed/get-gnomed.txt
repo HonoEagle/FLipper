@@ -1,0 +1,29 @@
+
+GUI r
+DELAY 200
+STRING powershell -windowstyle hidden
+ENTER
+DELAY 200
+STRING $key=[Math]::Ceiling(100/2);$obj=New-Object -ComObject WScript.Shell;for($i=0;$i -lt $key;$i++){$obj.SendKeys([char] 175)}
+ENTER
+DELAY 500
+STRING $sp=New-Object -ComObject SAPI.SpVoice
+ENTER
+DELAY 500
+STRING $sp.Speak("you have been quacked.")
+ENTER
+DELAY 100
+STRING start firefox 
+ENTER
+DELAY 2000
+GUI r
+DELAY 200
+STRING powershell -windowstyle hidden
+ENTER
+DELAY 200
+STRING start firefox https://www.youtube.com/watch?v=9iacZrrkGzk
+ENTER
+DELAY 2000
+ENTER
+STRING exit
+ENTER
