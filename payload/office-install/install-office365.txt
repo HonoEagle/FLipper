@@ -1,0 +1,49 @@
+REM # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+REM #    __  __     ______     __   __     ______     ______     ______     ______     __         ______                #
+REM #   /\ \_\ \   /\  __ \   /\ "-.\ \   /\  __ \   /\  ___\   /\  __ \   /\  ___\   /\ \       /\  ___\               #
+REM #   \ \  __ \  \ \ \/\ \  \ \ \-.  \  \ \ \/\ \  \ \  __\   \ \  __ \  \ \ \__ \  \ \ \____  \ \  __\               #
+REM #    \ \_\ \_\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\  \ \_____\             #
+REM #     \/_/\/_/   \/_____/   \/_/ \/_/   \/_____/   \/_____/   \/_/\/_/   \/_____/   \/_____/   \/_____/             #
+REM #                                                                                                                   #
+REM #   Target Windows 10/11                                                                                            #
+REM #   Computer must be smooth for script to work properly                                                             #
+REM #                                                                                                                   #
+REM #   Based on:                                                                                                       #
+REM #   https://github.com/mallockey/Install-Office365Suite and https://github.com/unwe4p0n1zed/FlipperZero-BadUSB      #
+REM #   Visit them for documentation                                                                                    #
+REM #                                                                                                                   #
+REM #           Authors ->                                                                                              #
+REM #               github.com/HonoEagle                                                                                #
+REM #               discord.com/users/422441208359419924                                                                #
+REM #                                                                                                                   #
+REM # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+GUI r
+DELAY 1000
+STRING powershell Start-Process powershell -Verb runAs
+CTRL-SHIFT ENTER
+DELAY 2000
+ALT Y
+DELAY 1000
+
+REM - Enable TLS 1.2
+STRING [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+ENTER
+
+REM - get all the scripts needed 
+STRING Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/HonoEagle/FLipper/main/script/install-office/office-install.ps1'))
+ENTER 
+STRING Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/unwe4p0n1zed/Powershell-Scripts/main/Functions/Remove-FileOrFolder/Remove-FileOrFolder.ps1'))
+ENTER
+
+REM - start install
+STRING & Install-Office365Suite -DisplayInstall
+ENTER
+
+REM - delete script files
+STRING Remove-FileOrFolder -ip "C:\Scripts\Office365Install" -it "Folder" 
+ENTER
+
+STRING EXIT
+ENTER
